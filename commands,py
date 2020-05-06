@@ -1,0 +1,19 @@
+if __name__ == '__main__':
+    N = int(input())
+    lista = []
+    commands = {
+                'insert': lista.insert,
+                'print': print,
+                'remove': lista.remove,
+                'append': lista.append,
+                'sort': lista.sort,
+                'pop': lista.pop,
+                'reverse': lista.reverse
+                }
+    for i in range(N):
+        command, *par = input().split()
+        params = list(map(int, par))
+        if command == 'print':
+            commands[command](lista)
+        else:
+            commands[command](*params)
